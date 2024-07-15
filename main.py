@@ -70,7 +70,7 @@ class Product:
             print("Request error")
 
     def __parse_data(self) -> dict:
-        """A method that receives data in json format and converts it into a nested list"""
+        """A method that receives data in beautifulsoup object and converts it into a dict"""
 
         if self.__get_data():
             soup = self.__get_data()
