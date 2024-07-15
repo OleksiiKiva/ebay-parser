@@ -146,3 +146,9 @@ class Product:
             }
 
             return result_dict
+
+    def print_data(self) -> None:
+        """A method that receives a dict and prints it in the console"""
+
+        if self.__parse_data():
+            print(self.__parse_data())
