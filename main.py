@@ -1,4 +1,6 @@
 # Headers
+import json
+
 import requests
 from bs4 import BeautifulSoup
 
@@ -152,3 +154,17 @@ class Product:
 
         if self.__parse_data():
             print(self.__parse_data())
+
+    def save_data_to_json(self) -> None:
+        """Method that saves input data to a JSON file"""
+
+        if self.__parse_data():
+            with open("ebay.json", "a", encoding="utf-8") as f:
+                json.dump(self.__parse_data(), f, ensure_ascii=False, indent=2)
+                f.write(",\n")
+
+
+if __name__ == "__main__":
+    parse = Product()
+    # parse.save_data_to_json()
+    parse.print_data()
